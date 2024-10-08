@@ -5,3 +5,12 @@ body {
   font-weight: 300;
   font-style: normal;
 }
+
+
+
+.bg{
+  background-attachment: fixed;
+  background-image: url(./assets/bg2.png);
+  background-position: center;
+  background-size: cover;
+}
