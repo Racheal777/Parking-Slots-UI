@@ -95,7 +95,7 @@ const OTP = () => {
         
           <p className="text-sm text-center">
             Didn't receive the code?{' '}
-            <Link to="/" className="text-orange-600 hover:underline">
+            <Link to="/home" className="text-orange-600 hover:underline">
               Resend
             </Link>
           </p>
