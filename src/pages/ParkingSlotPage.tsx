@@ -31,7 +31,7 @@ const ParkingSlotsPage = () => {
         <div className="max-w-7xl mx-auto">
           <header className="text-center mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl font-bold text-indigo-900 mb-2 sm:mb-4">Available Parking Slots</h1>
-            <p className="text-lg sm:text-xl text-indigo-700">Find your perfect spot in {location}</p>
+            <p className="text-lg sm:text-xl text-indigo-700 capitalize ">Find your perfect spot in {location}</p>
           </header>
   
           <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mb-6 sm:mb-8">
@@ -39,7 +39,7 @@ const ParkingSlotsPage = () => {
               <button className="text-indigo-600 hover:text-indigo-800 focus:outline-none p-2">
                 <ChevronLeft size={20} />
               </button>
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">{location}</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 capitalize">{location}</h2>
               <button className="text-indigo-600 hover:text-indigo-800 focus:outline-none p-2">
                 <ChevronRight size={20} />
               </button>
