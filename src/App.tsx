@@ -8,14 +8,18 @@ import SignupPage from './pages/SignupPage'
 import HomePage from './pages/HomePage'
 import OTPPage from './pages/OTPPage'
 import ParkingSlotsPage from './pages/ParkingSlotPage'
+import DashboardLayout from './layouts/DashboardLayout'
+import Overview from './pages/Dashboard/Overview'
+import Settings from './pages/Dashboard/Settings'
 
 function App() {
 
-  const router = createBrowserRouter([{
+  const router = createBrowserRouter([
+    
+  {
     path: '/',
     element: <LoginPage/>,
 
-    
   },
 
   {
@@ -36,7 +40,24 @@ function App() {
   {
     path: '/parking/:location',
     element: <ParkingSlotsPage/>,
+  },
+
+  {
+    path: '/dashboard',
+    element: <DashboardLayout/>,
+    children: [
+      {
+        index: true,
+        element: <Overview/>
+      },
+
+      {
+        path: "settings",
+        element: <Settings/>
+      }
+    ]
   }
+
 
   
 ])
