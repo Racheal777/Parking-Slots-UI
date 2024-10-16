@@ -25,7 +25,7 @@ const BookingForm = ({ slot, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Booking submitted:', formData);
-    // Here you would typically send the data to your backend
+  
     onClose();
   };
 

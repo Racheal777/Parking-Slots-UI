@@ -14,3 +14,11 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+.dashboard-bg{
+  height: 30vh;
+  background-image: url(./assets/bg2.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+}

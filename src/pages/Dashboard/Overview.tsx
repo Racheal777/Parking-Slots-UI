@@ -1,11 +1,14 @@
 import React from 'react'
+import DashboardCard from '../../components/DashboardCard'
+import Sidebar from '../../components/Sidebar'
 
 const Overview = () => {
   return (
-    <div>
-      <h1>
-        Overview
-      </h1>
+    <div className='mx-auto p-10'>
+
+     
+      
+     <DashboardCard/>
     </div>
   )
 }
