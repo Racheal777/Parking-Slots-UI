@@ -31,7 +31,7 @@ export const Data = [
         year: 2024,
         month: 'Dec',
         Day: 'Thur',
-        users: 80,
+        users: 800,
        
       },
 
@@ -58,7 +58,7 @@ export const Data = [
         year: 2024,
         month: 'Dec',
         Day: 'Sun',
-        users: 120,
+        users: 600,
        
       },
     
@@ -69,10 +69,9 @@ export const Data = [
     {
       id: 1,
       paymentType: "Visa Card",
-      total: 1090,
+      total:  4300,
       month: 'Dec',
-     
-     
+      
     },
 
     {
@@ -87,15 +86,49 @@ export const Data = [
     {
       id: 3,
       paymentType: "Telecel Cash",
-      total: 4300,
+      total: 1090,
       month: 'Dec',
      
      
     },
 
+  ];
+
+  export const UserTitles =[
+    
+    'name',
+    'phone',
+    'bookedTimes'
+  ]
+
+
+  export const Users = [
+    {
+  
+      name: "Racheal Kuranchie",
+      phone: "0542802959",
+      bookedTimes: 5,
+      
+    },
+
+
+    {
+    
+      name: "Phillis Kuranchie",
+      phone: "0542802954",
+      bookedTimes: 10,
+      
+    },
+
+
+    {
+   
+      name: "James Kuranchie",
+      phone: "0542802945",
+      bookedTimes: 17,
+      
+    },
+
     
 
-     
-      
-    
   ];

@@ -1,5 +1,7 @@
-import { Settings, Home, Car, ChartArea, LogOut } from "lucide-react";
-import {hockeyMask, home} from '@lucide/lab'
+
+import { faGear, faHome, faCar, faChartSimple, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+
+
 
 export const K = {
    Overview : [
@@ -38,11 +40,12 @@ export const K = {
 
    ],
 
+  
    SidebarLinks : [
     {
         name: 'Overview',
         route: '',
-        icon: home
+        icon: faHome
 
 
     },
@@ -50,7 +53,7 @@ export const K = {
     {
         name: 'Statistics',
         route: '',
-        icon: home
+        icon: faChartSimple
 
 
     },
@@ -58,7 +61,7 @@ export const K = {
     {
         name: 'Parking Slots',
         route: '',
-        icon: home
+        icon: faCar
 
 
     },
@@ -66,7 +69,7 @@ export const K = {
     {
         name: 'Settings',
         route: 'settings',
-        icon: hockeyMask
+        icon: faGear
 
 
     },
@@ -74,7 +77,7 @@ export const K = {
     {
         name: 'Logout',
         route: '',
-        icon: home
+        icon: faRightFromBracket
 
 
     },

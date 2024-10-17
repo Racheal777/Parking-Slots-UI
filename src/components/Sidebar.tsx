@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
-import { Icon } from "lucide-react";
-import { K } from "../constants";
+
+import {  K } from "../constants";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 
 const Sidebar = () => {
   return (
@@ -17,9 +20,10 @@ const Sidebar = () => {
               <li>
 
               {" "}
-              <Link to={side.route} className="flex items-center gap-2 text-black hover:text-asphalt">
+              <Link to={side.route} className="flex items-center gap-4 text-black hover:bg-green-500 hover:transition duration-150">
                 {" "}
-                <Icon iconNode={side.icon} size={20} />
+                <FontAwesomeIcon icon={side.icon} />
+               
                 <span>{side.name}</span>
               </Link>{" "}
             </li>

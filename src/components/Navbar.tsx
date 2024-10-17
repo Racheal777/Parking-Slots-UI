@@ -5,19 +5,26 @@ import { Settings, Search } from "lucide-react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="fixed w-full top-0 z-30 shadow-lg flex flex-col gap-5  p-5 transition duration-150">
+      <nav className="fixed w-full top-0 z-30 shadow-lg flex flex-col gap-5 bg-white  p-5 transition duration-150">
 
        <div className="container mx-auto flex justify-between align-middle items-center">
 
        <div className="flex p-2">
-       <div className="px-4">
+       <div className="px-4 py-2">
        <h1>Dashboard</h1>
        </div>
 
-         <div className="bg-gray-300  flex ">
-        <button type="button"> <Search size={20} className="" /></button>
-         <input type="text" name="" id="" placeholder="Search" className="bg-gray-300 "/>
-         </div>
+       <div className="bg-gray-100 flex items-center rounded-md shadow-sm p-2 w-full max-w-sm">
+  <button type="button" className="text-gray-500 hover:text-gray-700 focus:outline-none">
+    <Search size={20} />
+  </button>
+  <input 
+    type="text" 
+    placeholder="Search" 
+    className="bg-gray-100 focus:outline-none ml-3 w-full text-gray-700 placeholder-gray-400"
+  />
+</div>
+
 
         </div>
 

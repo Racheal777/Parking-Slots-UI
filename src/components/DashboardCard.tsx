@@ -1,11 +1,13 @@
 import { K } from "../constants";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import { Data, Sales } from "../constants/data/chartData";
+import { Data, Sales, Users, UserTitles } from "../constants/data/chartData";
 import { BarChart } from "./BarChat";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import PieChart from "./PieChart";
+import LineChart from "./LineChart";
+import TableCard from "./TableCard";
 
 Chart.register(CategoryScale);
 const DashboardCard = () => {
@@ -22,7 +24,7 @@ const DashboardCard = () => {
           "#f3ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
+        borderColor: "rgb(75, 192, 192)",
         borderWidth: 2,
       },
     ],
@@ -35,11 +37,9 @@ const DashboardCard = () => {
         label: `Payment for Dec`,
         data: Sales.map((item) => item.total),
         backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
+          "rgba(255, 99, 132, 1)", 
+          "#F3BA2F", 
+          "#FFFDD0",
         ],
         borderColor: "black",
         borderWidth: 2,
@@ -47,11 +47,17 @@ const DashboardCard = () => {
     ],
   });
 
+  const sortUsers = () => {
+    return Users.sort((a, b) => b.bookedTimes - a.bookedTimes);
+  };
+
+  const sortedUsers = sortUsers();
+
   return (
     <div>
-      <section className="bg-slate-400 rounded-lg  ">
-        <div className="text-left p-8 ">
-          <h2 className="font-bold">Daily Analytics</h2>
+      <section className="bg-green-500 rounded-lg shadow-md ">
+        <div className="text-left p-8 text-white">
+          <h2 className="font-bold text-xl">Daily Analytics</h2>
           <p>This is a daily overview generated</p>
         </div>
 
@@ -74,94 +80,76 @@ const DashboardCard = () => {
         </div>
       </section>
 
-      <div className="grid grid-cols-3 place-content-center gap-8 py-10 m-auto">
-        <motion.div
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center">
-          <h2>Sales Overview</h2>
-          <PieChart chartData={pieData}/>
-        
-        </motion.div>
+      <div className=" grid grid-cols-3 place-content-center gap-8 py-10 m-auto">
+       
 
         <motion.div
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center">
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.3,
+          }}
+          className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center"
+        >
           <h2>Users Booked</h2>
 
           <BarChart chartData={chartData} />
         </motion.div>
 
-
         <motion.div
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center">
-          <h2>Users Booked</h2>
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.3,
+          }}
+          className="col-span-2 relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center"
+        >
+          <h2 className="py-3">Frequent Users</h2>
 
-          <BarChart chartData={chartData} />
+         <TableCard data={sortedUsers} titles={UserTitles} />
         </motion.div>
-
-        
       </div>
 
-
       <motion.div
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className="grid grid-cols-3 place-content-center gap-8 py-10 m-auto">
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.9,
+          delay: 0.3,
+        }}
+        className="grid grid-cols-3 place-content-center gap-8 py-10 m-auto"
+      >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.3,
+          }}
+          className="col-span-2 relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center"
+        >
+          <h2>Peak Times for booking</h2>
 
+          <LineChart chartData={chartData} />
+        </motion.div>
 
-        <motion.div 
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className="col-span-2 relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center">
-          <h2>Parking Slots Overview</h2>
-
-          <BarChart chartData={chartData} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.3,
+          }}
+          className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center"
+        >
+          <h2>Sales Overview</h2>
+          <PieChart chartData={pieData} />
         </motion.div>
 
 
-
-        <motion.div 
-              
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.9,
-                delay:  0.3,
-              }} className=" relative bg-white rounded-md shadow-lg p-7 bg-transparent text-center">
-          <h2>Transactions</h2>
-
-          <BarChart chartData={chartData} />
-        </motion.div>
-
-
-        </motion.div>
-
-
-      
+      </motion.div>
     </div>
   );
 };
